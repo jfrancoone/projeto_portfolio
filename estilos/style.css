@@ -36,6 +36,9 @@ header{
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 header nav#menu{
   padding: 2px;
@@ -213,13 +216,38 @@ article h2{
   padding: 10px;
   border-radius: 8px;
   border-left: 5px solid var(--destaque-inverso);
+  transition: border-color .3s, border-width .3s;
 }
+#projeto-container .projeto:hover{
+  border-color: var(--destaque);
+  border-left-width: 15px;
+  cursor: pointer;
+}
+#projeto-container .foto{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 8px;
+}
+footer{
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
 
-
-
-
+}
 @media screen and (min-width: 768px) {
   .skill-container{
     grid-template-columns: 1fr 1fr;
   }
+  #projeto-container .projeto{
+    max-width: 40%;
+  }
+  #projeto-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
 }
